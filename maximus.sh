@@ -7,7 +7,8 @@ LOGO="███╗   ███╗ █████╗ ██╗  ██╗██�
 ██║ ╚═╝ ██║██║  ██║██╔╝ ██╗██║██║ ╚═╝ ██║╚██████╔╝███████║
 ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝     ╚═╝ ╚═════╝ ╚══════╝
 "
-
+cwd=$(pwd)
+dt=$(pwd)/Downloaded" "Tools
 echo -e "\e[33m$LOGO"
 echo -e "1) Phishing Tools\n2) Payload/Backdoor Generators\n3) Dos/DDoS Tools\n4) WiFi Attack Tools\n"
 
@@ -17,49 +18,29 @@ read -r choice
 case "$choice" in
 	"1" )
 		echo -e "$(clear)\e[33m\n$LOGO\n\e[34m> Phishing Tools >\n\e[33m"
-		echo -e "1) HiddenEye (Recommended)\n2) ShellPhish\n3) SocialPhish\n4) BlackEye\n\n10) Back\n99) Home\n"
+		echo -e "1) HiddenEye\n2) ShellPhish\n3) SocialPhish\n4) BlackEye\n\n10) Back\n99) Home\n"
 		printf "Enter your choice: "
 		read -r choice1
 		case "$choice1" in
 			"1" )
 				echo -e "$(clear)\e[33m\n$LOGO\e[34m\n> Phishing Tools > 1) HiddenEye\n\e[33m"
-				dirHiddenEye="/home/$USER/Desktop/HiddenEye/"
+				dirHiddenEye="$dt/HiddenEye/"
+				#echo "$dirHiddenEye"
 				if [ -d "$dirHiddenEye" ]; then
-					echo -e "1) Run\n2) About\n"
+					echo -e "Please visit \e[5mhttps://github.com/DarkSecDevelopers/HiddenEye \e[0m\e[33mto install prerequisite and to know how to run it.\n"
+				else
+					echo -e "1) Download\n2) About\n"
 					printf "Enter your choice: "
 					read -r choice1_1
+				fi
 					case "$choice1_1" in
 						"1" )
-								sudo python3 /home/$USER/Desktop/HiddenEye/HiddenEye.py
+							echo "$(git clone https://github.com/DarkSecDevelopers/HiddenEye "$dt/HiddenEye/")"
 							;;
 						"2" )
-						echo -e "$(clear)\e[33m\n$LOGO\e[34m\n> Phishing Tools > 1) HiddenEye > 2) About\n\e[33m"
-						echo -e "DEVELOPERS & CONTRIBUTORS\n1. ANONUD4Y (https://github.com/An0nUD4Y)\n2. USAMA ABDUL SATTAR (https://github.com/usama7628674)\n3. sTiKyt (https://github.com/sTiKyt)\n4. UNDEADSEC (https://github.com/UndeadSec)\n5. Micrafast (https://github.com/Micrafast)\n6. Moltivie (https://github.com/Moltivie)\n7. endbehavi0r (https://github.com/endbehavi0r)\n8. DarkMidus (https://github.com/DarkMidus)\n"
-						echo -e "99) Go to Home\n"
+							echo -e "Please visit \e[5mhttps://github.com/DarkSecDevelopers/HiddenEye \e[0m\e[33mto know more.\n"
 					esac
-				else
-					echo -e "1) Download on Desktop\n2) About\n"
-				fi
-				printf "Enter your choice: "
-				read -r choice1_1
-				case "$choice1_1" in
-					"1" )
-						echo "$(git clone https://github.com/DarkSecDevelopers/HiddenEye ~/Desktop/HiddenEye/)"
-						;;
-					"2" )
-						echo -e "$(clear)\e[33m\n$LOGO\n> Phishing Tools > 1) HiddenEye > 2) About\n"
-						echo -e "DEVELOPERS & CONTRIBUTORS\n1. ANONUD4Y (https://github.com/An0nUD4Y)\n2. USAMA ABDUL SATTAR (https://github.com/usama7628674)\n3. sTiKyt (https://github.com/sTiKyt)\n4. UNDEADSEC (https://github.com/UndeadSec)\n5. Micrafast (https://github.com/Micrafast)\n6. Moltivie (https://github.com/Moltivie)\n7. endbehavi0r (https://github.com/endbehavi0r)\n8. DarkMidus (https://github.com/DarkMidus)\n"
-						echo -e "99) Go to Home\n"
-						printf "Enter your choice: "
-						read -r choice1_1_2
-						case "$choice1_1_2" in
-							"99" )
-								bash maximus.sh
-								;;
-						esac
-						;;
-				esac
-				;;
+					;;
 			"4" )
 				echo -e "$(clear)\e[33m\n$LOGO\e[34m\n> Phishing Tools > 1) BlackEye\n\e[33m"
 				dirBlackEye="/home/$USER/Desktop/BlackEye/"
